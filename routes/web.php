@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ResultController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('data');
+})->name('test-page');
+
+Route::post('/get-results',[ResultController::class,'getResults'])->name('get-results');
+
+?>
